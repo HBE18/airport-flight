@@ -16,3 +16,7 @@
   - NodeJS for development environment<br>
   - CommonJs and ES2020 for Javascript base 
 </p>
+
+<p>
+  node execution environment should be setted up as powershell since npm scripts do include powershell exclusive command patterns.<br> (Powershell 7.2.3 have used.)
+</p>
