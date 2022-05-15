@@ -10,6 +10,25 @@ const userRouter = express.Router();
 userRouter
 .route("/signup")
 .post(async (req,res,next) => {
-    const pars = req.body;
-    
+    const cred = req.body;
+    cred.json();
+    // TODO: Check data integrity then query to db
 })
+
+userRouter
+.route("/login")
+.post(async (req,res,next) => {
+    const cred = req.body;
+    cred.json();
+    // TODO: Check database for auth then create session with credentials
+})
+
+userRouter
+.route("/logout")
+.delete(async (req,res,next) => {
+    const cred = req.body;
+    cred.json();
+    // TODO: Check session for auth then delete session
+})
+
+export default userRouter;

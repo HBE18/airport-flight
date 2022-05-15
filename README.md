@@ -28,5 +28,8 @@
 </p>
 
 <p>
-  Node execution environment should be setted up as powershell since npm scripts do include powershell exclusive command patterns.<br> (Powershell 7.2.3 have used.)
+  Node execution environment should be setted up as powershell since npm scripts do include powershell exclusive command patterns.<br> (Powershell 7.2.3 have used.)<br>
+  At the start, please run npm run i for installation of node_modules.<br>
+  Use "npm run start" for starting server.<br>
+  Use "npm run dev" for starting server in development mode via nodemon.
 </p>

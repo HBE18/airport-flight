@@ -20,3 +20,5 @@ userRouter
         next();
     }
 });
+
+export default userRouter;
