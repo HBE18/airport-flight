@@ -16,7 +16,17 @@
   - NodeJS for development environment<br>
   - CommonJs and ES2020 for Javascript base 
 </p>
+<h2>
+    Routes of API:
+</h2>
+<p>
+    / : API base point, just returns a welcome string <br>
+    /flight : Takes body paramter id for flight-id and returns a json for given flight from Schiphol Airport public-flights api.<br>
+    /signup : Takes body parameters => (All string) name, midname(optional), surname, password, email<br>
+    /login : Takes email and password in body, creates a session with given credentials if the data matches<br>
+    /logout : Deletes session.
+</p>
 
 <p>
-  node execution environment should be setted up as powershell since npm scripts do include powershell exclusive command patterns.<br> (Powershell 7.2.3 have used.)
+  Node execution environment should be setted up as powershell since npm scripts do include powershell exclusive command patterns.<br> (Powershell 7.2.3 have used.)
 </p>
