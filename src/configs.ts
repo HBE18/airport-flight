@@ -4,6 +4,7 @@ export enum HttpCode
     Created = 201,
     NoContent = 204,
     BadRequest = 400,
+    NotFound = 404,
     Forbidden = 403,
     Timeout = 504
 }
