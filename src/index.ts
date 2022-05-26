@@ -1,23 +1,28 @@
-import express, { json, response } from 'express';
+require('dotenv').config();
+import express from 'express';
 import {ExpressConfig, HttpCode} from './configs';
+import userRouter from './routes/user-routes';
+import serverRouter from './routes/serverside-routes';
 const cors = require('cors');
+
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use(userRouter);
+app.use(serverRouter);
 
 
 const port = ExpressConfig.Port || 3000;
 const http = HttpCode;
 
 app.get("/", async (req,res) => {
-    const resp = req.body.admin +" "+ req.body.username+" " + req.body.pass;
-    res.status(http.Success).send(resp)
-    console.log(req.body)
+    res.status(http.Success).send("Index Here");
+    console.log("Index Requested!");
 })
 
-app.get("/users", async (req,res) => {
-    res.json
-})
-app.listen(port);
-console.log(`App is running on http://localhost:${port}.`);
+
+
+app.listen(port,() => {
+    console.log(`App is running on http://localhost:${port}.`);
+});
