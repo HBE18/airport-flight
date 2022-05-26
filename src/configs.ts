@@ -15,9 +15,9 @@ export enum ExpressConfig
 
 export enum dbConfig 
 {
-    user = "postgres",
-    password = "123456",
-    database = "airline",
+    user = "airliner",
+    password = "password",
+    database = "airport",
     host = "localhost",
     port = 5432
 }

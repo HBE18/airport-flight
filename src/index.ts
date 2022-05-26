@@ -1,9 +1,8 @@
 require('dotenv').config();
 import express from 'express';
-import { Response } from 'node-fetch';
 import {ExpressConfig, HttpCode} from './configs';
-import userRouter from 'routes/user-routes';
-import serverRouter from 'routes/serverside-routes';
+import userRouter from './routes/user-routes';
+import serverRouter from './routes/serverside-routes';
 const cors = require('cors');
 
 
@@ -21,7 +20,9 @@ app.get("/", async (req,res) => {
     res.status(http.Success).send("Index Here");
     console.log("Index Requested!");
 })
- 
 
-console.log(`App is running on http://localhost:${port}.`);
-app.listen(port);
+
+
+app.listen(port,() => {
+    console.log(`App is running on http://localhost:${port}.`);
+});

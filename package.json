@@ -4,6 +4,7 @@
   "description": "An simple airport management API",
   "main": "index.js",
   "scripts": {
+    "min-start":"npm run comp && node out/index.js",
     "start": "npm run prep && npm run comp && node out/index.js",
     "comp": "tsc -p .",
     "prep": "if(Test-path out){rmdir out -recurse}",

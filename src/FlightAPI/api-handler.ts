@@ -1,3 +1,4 @@
+import { secureHeapUsed } from "crypto";
 import express from "express";
 import fetch, { Response } from "node-fetch";
 
@@ -16,10 +17,27 @@ const baseurl =`https://api.schiphol.nl/public-flights`;
 
 export async function getFlights(req:express.Request,res:express.Response,next?:express.NextFunction) {
 
-    const endpoint = "/flights";
-    const url = baseurl + endpoint;
+    const endpoint = "/flights?";
+    var url = baseurl + endpoint;
+    const queries = req.query;
+    if (!(queries.scheduleDate===undefined)) {
+        let addition : string= "&scheduleDate=" + queries.scheduleDate;
+        url += addition;
+    }
+    if (!(queries.scheduleTime === undefined)) {
+        let addition : string = "&scheduleTime=" + queries.scheduleTime;
+        url+= addition;
+    }
+    if (!(queries.flightDirection === undefined)) {
+        let addition : string = "&flightDirection=" + queries.flightDirection;
+        url+= addition;
+    }
+    url+= "&sort=+scheduleTime";
     const resp : Promise<Response> = await fetch(url,options)
-    .then((resp) => resp.json())
+    .then((resp) => {
+        console.log(resp);
+        return resp.json();
+    })
     .catch(e => {
         console.error({
             "message" : "Flights endpoint is the point of error.",
