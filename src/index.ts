@@ -1,4 +1,3 @@
-require('dotenv').config();
 import express from 'express';
 import {ExpressConfig, HttpCode} from './configs';
 import userRouter from './routes/user-routes';

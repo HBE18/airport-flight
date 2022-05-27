@@ -4,7 +4,7 @@
 
   This API is being developped just for R&D purposes so there is no intent of direct use of it.  
 
-  This being stated, API is designated to work on local computer and connected to a local database freshly created with given given creation scripts.  
+  This being stated, API is designated to work on local computer and connected to a local database freshly created with given creation scripts.  
 
 ## Used techs
 
