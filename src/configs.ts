@@ -13,11 +13,15 @@ export enum ExpressConfig
     Port = 3000,
 }
 
-export enum dbConfig 
-{
-    user = "airliner",
-    password = "password",
-    database = "airport",
-    host = "localhost",
-    port = 5432
+const dbConfig ={
+    host : "localhost",
+    port: 5432,
+    database : "airport",
+    user : "airliner",
+    password : "123456",
+    max: 20,
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 2000
 }
+
+export default (dbConfig);
