@@ -4,7 +4,7 @@
   "description": "An simple airport management API",
   "main": "index.js",
   "scripts": {
-    "min-start":"npm run comp && node out/index.js",
+    "min-start": "npm run comp && node out/index.js",
     "start": "npm run prep && npm run comp && node out/index.js",
     "comp": "tsc -p .",
     "prep": "if(Test-path out){rmdir out -recurse}",
@@ -28,7 +28,6 @@
   },
   "homepage": "https://github.com/HBE18/airport-management#readme",
   "dependencies": {
-    "dotenv": "^16.0.1",
     "express": "^4.18.1"
   },
   "devDependencies": {
