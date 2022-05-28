@@ -1,9 +1,12 @@
+
+
 export enum HttpCode 
 {
     Success = 200,
     Created = 201,
     NoContent = 204,
     BadRequest = 400,
+    Unauthorized = 401,
     NotFound = 404,
     Forbidden = 403,
     Timeout = 504
@@ -13,7 +16,7 @@ export enum ExpressConfig
     Port = 3000,
 }
 
-const dbConfig ={
+export const dbConfig = {
     host : "localhost",
     port: 5432,
     database : "airport",
@@ -24,4 +27,11 @@ const dbConfig ={
     connectionTimeoutMillis: 2000
 }
 
-export default (dbConfig);
+export const TokenConfig =  {
+    token: {
+        expireTime: 36000,
+        issuer: 'coolIssuer',
+        secret: 'superencryptedsecret'
+    }
+
+}

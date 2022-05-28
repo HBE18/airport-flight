@@ -1,20 +1,26 @@
-export type User = UserUpdate & {id: number};
+export type User = UserInsert & {id: number};
 
 export interface UserInsert{
-    id : number,
-    name : string,
-    midname ?: string,
-    surname : string,
     password : string,
-    email : string
+    email : string,
+    flights ?: Array<number>
+}
+
+export interface UserAuth{
+    email : string,
+    password : string
+}
+
+export interface UserPass{
+    password: string;
 }
 
 export interface UserUpdate {
     email: string;
     password?: string;
-    firstName?: string;
-    lastName?: string;
+    flights ?: Array<number>;
 }
+
 
 export interface UserPatch extends Partial<UserInsert>{}
 

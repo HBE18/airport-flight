@@ -1,34 +1,26 @@
 import express from "express";
 import { Body } from "node-fetch";
 import {ExpressConfig, HttpCode} from '../configs';
-import * as usermodel from "../models/user-models";
-import * as flightmodel from "../models/user-models";
 const handler = require("../FlightAPI/api-handler");
 const userRouter = express.Router();
-
+import { login } from '../controller/controller';
+import { validateSameEmailBelongToSameUser, validateSameEmailDoesntExist, validateUserExists } from '../middleware/user';
+import { createUser } from '../controller/controller';
 
 userRouter
-.route("/signup")
-.post(async (req,res,next) => {
-    const cred = req.body;
-    cred.json();
-    // TODO: Check data integrity then query to db
+.route("/register")
+.post(validateSameEmailDoesntExist,createUser,(req,res) => {
+    res.redirect('http://localhost:3000/login'); //should be forwarded to login page but there is no login page in my system.
 })
 
 userRouter
 .route("/login")
-.post(async (req,res,next) => {
-    const cred = req.body;
-    cred.json();
-    // TODO: Check database for auth then create session with credentials
+.get((req,res)=>{
+    res.status(HttpCode.Success).send("Login Here!");
+    console.log("Login requested.");
 })
+.post(validateUserExists,login);
 
-userRouter
-.route("/logout")
-.delete(async (req,res,next) => {
-    const cred = req.body;
-    cred.json();
-    // TODO: Check session for auth then delete session
-})
+
 
 export default userRouter;
