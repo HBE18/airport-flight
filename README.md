@@ -24,6 +24,22 @@
 
 - nodemon : Nodemon is a development QoL package which provides various ease of development functions like auto re-build on change.  
 
+- JWT : JSON Web Token is a authentication package to securely authenticate users.
+
+- BcryptJS : This package helps us to encode and decode password.
+
+## Routes
+
+- `/` : Base endpoint.
+
+- `/register` : User register endpoint.
+
+- `/login` : User login.
+
+- `/flights` : Getting all flights data from schiphol api with specified date and time options in request body.
+
+- `/flight` : Getting specific flight by using flightId in request body.
+
 ## How To Use  
 
 - First, download/clone files.  
