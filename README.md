@@ -45,7 +45,7 @@
 - First, download/clone files.  
 - Second, open project in code editor of your choice. VSCode has been used in development and is recommended.  
 - Third, open terminal in folder which project files are in and type `npm i` command. This will download all required node packages.  
-- Then, prepare your database with given database scripts in [HERE]('https://github.com/HBE18/airport-management/blob/d57ca0da3e057ba665fad5dbe7ed7a26237efadc/src/database/scripts.md').
+- Then, prepare your database with given database scripts in [HERE]('https://github.com/HBE18/airport-management/blob/main/src/database/scripts.md').
 - Then, you can start the API by using given scripts:  
 
   - `npm run start` : This script clears previous outputs and generates a fresh build and runs it.  
