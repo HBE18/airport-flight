@@ -1,4 +1,4 @@
-# An airport management API inspired from Schiphol Airport Management API
+# An airport flight API inspired from Schiphol Airport Flight API
 
 ## Introduction
 
